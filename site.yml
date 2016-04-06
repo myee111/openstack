@@ -1,6 +1,7 @@
 ---
 - name: Prepare server to become an undercloud.
   hosts: openstack
+  gather_facts: no
   remote_user: root
 
   roles:

@@ -8,6 +8,9 @@
   yum: name=deltarpm state=installed
   tags: deltarpm
 
+- name: Upgrade all packages.
+  yum: name=* state=latest
+
 - name: Install NTP.
   yum: name=ntp state=installed
   tags: ntp
@@ -31,3 +34,18 @@
 - name: Enable selinux enforcing.
   selinux: policy=targeted state=enforcing
   tags: selinux
+
+- name: Replace the external network configuration file.
+  template: src=ifcfg-ext.j2 dest="/etc/sysconfig/network-scripts/ifcfg-{{ ext_net_name }}" mode=0644 backup=yes
+
+- name: Replace the internal network configuration file.
+  template: src=ifcfg-int.j2 dest="/etc/sysconfig/network-scripts/ifcfg-{{ int_net_name }}" mode=0644 backup=yes
+
+- name: Ovewrite hosts file.
+  copy: src=hosts dest=/etc/hosts
+
+- name: Disable and stop NetworkManager.
+  service: name=NetworkManager state=stopped enabled=no
+
+- name: Add hostname to the hosts file.
+  hostname: name="{{ hostname }}"
