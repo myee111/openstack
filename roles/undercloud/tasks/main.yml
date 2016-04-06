@@ -56,7 +56,3 @@
   poll: 0
   sudo: true
   ignore_errors: true
-
-- name: waiting for server to come back
-  local_action: wait_for host={{ hostname }} state=started delay=30 timeout=300
-  sudo: false
