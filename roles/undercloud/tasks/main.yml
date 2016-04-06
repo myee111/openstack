@@ -1,0 +1,33 @@
+---
+# This playbook will install stuff.
+#
+- name: Configure resolv.conf.
+  template: src=resolv.conf.j2 dest=/etc/resolv.conf mode=0644 backup=no
+
+- name: Install deltarpm.
+  yum: name=deltarpm state=installed
+  tags: deltarpm
+
+- name: Install NTP.
+  yum: name=ntp state=installed
+  tags: ntp
+
+- name: Ensure NTP is running and enabled. 
+  service: name=ntpd state=running enabled=yes
+  tags: ntp
+
+- name: Install tmux.
+  yum: name=tmux state=installed
+  tags: tmux
+    
+- name: Install firewalld.
+  yum: name=firewalld state=installed
+  tags: firewalld
+
+- name: Ensure firewalld is running and enabled.
+  service: name=firewalld state=running enabled=yes
+  tags: firewalld
+
+- name: Enable selinux enforcing.
+  selinux: policy=targeted state=enforcing
+  tags: selinux
