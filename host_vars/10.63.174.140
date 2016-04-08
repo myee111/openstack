@@ -1,0 +1,3 @@
+hostname: openstack4.lab
+ext_ip_address: 10.63.174.18
+int_ip_address: 192.0.2.18

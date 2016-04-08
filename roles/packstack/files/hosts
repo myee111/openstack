@@ -1,0 +1,6 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.63.174.16 openstack3.lab openstack3
+10.63.174.18 openstack4.lab openstack4
+10.63.174.20 openstack5.lab openstack5
+10.63.174.22 openstack6.lab openstack6

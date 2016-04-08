@@ -1,0 +1,4 @@
+[packstack]
+openstack3 ansible_host=10.63.174.141
+openstack4 ansible_host=10.63.174.140
+openstack5 ansible_host=10.63.174.139

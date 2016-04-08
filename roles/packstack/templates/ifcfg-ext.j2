@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+DEVICE={{ ext_net_name }}
+ONBOOT=yes
+BOOTPROTO=static
+NM_CONTROLLED=no
+IPADDR={{ ext_ip_address }}
+NETMASK=255.255.255.0
+GATEWAY={{ ext_net_gw }}

@@ -1,0 +1,17 @@
+hostname139: openstack5
+hostname140: openstack4
+hostname141: openstack3
+dns1: 10.60.132.40
+dns2: 8.8.8.8
+ext_net_name: enp8s0f0
+ext_net_gw: 10.63.174.1
+int_net_name: enp4s0f0
+
+ext_ip_address_139: 10.63.174.20
+int_ip_address_139: 192.0.2.20
+
+ext_ip_address_140: 10.63.174.18
+int_ip_address_140: 192.0.2.18
+
+ext_ip_address_141: 10.63.174.16
+int_ip_address_141: 192.0.2.16

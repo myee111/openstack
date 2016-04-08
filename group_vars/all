@@ -1,9 +1,8 @@
-hostname: openstack3.lab
-short_hostname: openstack3
-ext_ip_address: 10.63.174.16
-int_ip_address: 192.0.2.16
 dns1: 10.60.132.40 
 dns2: 8.8.8.8
 ext_net_name: enp8s0f0
 ext_net_gw: 10.63.174.1
 int_net_name: enp4s0f0
+ansible_connection: ssh
+ansible_ssh_user: root
+ansible_ssh_pass: Netapp123

@@ -26,9 +26,12 @@
 - name: Install vim.
   yum: name=vim state=installed
   tags: vim 
+
+- name: install selinux bindings 
+  yum: name=libselinux-python state=present 
     
-- name: Enable selinux enforcing.
-  selinux: policy=targeted state=enforcing
+- name: Enable selinux permissive.
+  selinux: policy=targeted state=permissive
   tags: selinux
 
 - name: Replace the external network configuration file.

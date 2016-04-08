@@ -1,8 +1,8 @@
 ---
 - name: Prepare server to become an undercloud.
-  hosts: all
+  hosts: packstack
   gather_facts: no
   remote_user: root
 
   roles:
-    - undercloud
+    - packstack
