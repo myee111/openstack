@@ -8,6 +8,10 @@
   yum: name=deltarpm state=installed
   tags: deltarpm
 
+- name: Install wget.
+  yum: name=wget state=installed
+  tags: wget
+
 - name: Upgrade all packages.
   yum: name=* state=latest
 
@@ -16,7 +20,7 @@
   tags: ntp
 
 - name: Ensure NTP is running and enabled. 
-  service: name=ntpd state=running enabled=yes
+  service: name=ntpd state=stopped enabled=yes
   tags: ntp
 
 - name: Install tmux.
@@ -42,6 +46,9 @@
 
 - name: Ovewrite hosts file.
   copy: src=hosts dest=/etc/hosts
+
+- name: Overwrite sshd_config.
+  copy: src=sshd_config dest=/etc/ssh/sshd_config
 
 - name: Disable and stop NetworkManager.
   service: name=NetworkManager state=stopped enabled=no

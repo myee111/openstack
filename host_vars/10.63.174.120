@@ -1,0 +1,3 @@
+hostname: openstack7.lab
+ext_ip_address: 10.63.174.24
+int_ip_address: 192.0.2.24
